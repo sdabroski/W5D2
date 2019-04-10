@@ -1,0 +1,11 @@
+<h3>Welcome <%= current_user.username %> </h3>
+
+<a href="<%= new_sub_url %>">Create New Sub</a>
+
+
+
+<ul>
+ <% all_subs.each do |sub| %>
+     <li><a href="<%= sub_url(sub) %>"><%= sub.title %></a></li>
+ <% end %>
+</ul>

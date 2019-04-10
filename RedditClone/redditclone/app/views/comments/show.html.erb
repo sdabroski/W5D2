@@ -1,0 +1,11 @@
+<%= @comment.content %>
+<br>
+<br>
+<a href="<%= post_url(@comment.post) %>">Back to Post</a>
+
+<form action="<%= comments_url %>" method="post">
+  
+  <input type="text" value="comment[body]">
+
+  <input type="submit" value="Reply">
+</form>

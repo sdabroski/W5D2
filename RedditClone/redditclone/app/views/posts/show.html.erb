@@ -1,0 +1,37 @@
+<h1><%= @post.title %></h1>
+<br>
+  <a href="<%= @post.url %>"><%= @post.title %></a>
+<br>
+<%= @post.content %>
+
+
+<ul>
+<% @post.subs.each do |sub| %>
+  
+  
+  <li><a href="<%= sub_url(sub)%>">
+    <%= sub.title %>
+  </a></li>
+
+
+<% end %>
+</ul>
+
+<h3>Comments</h3>
+
+<ul>
+<% @post.comments.each do |comment| %>
+  
+  <% if comment.parent_comment_id.nil? %>
+  
+  <li><a href="<%= comment_url(comment)%>"><%= comment.content %></a></li>
+
+  
+  <% end %>
+  
+<% end %>
+</ul>
+
+
+
+
